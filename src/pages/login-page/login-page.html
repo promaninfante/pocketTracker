@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      LoginPage
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3">
+  <form id="loginPage-form1">
+    <h3 id="loginPage-heading3" style="color:#000000;text-align:center;">
+      PocketTracker
+    </h3>
+    <div class="spacer" style="width:300px;height:17px;" id="loginPage-spacer3"></div>
+    <ion-list id="loginPage-list1">
+      <ion-item id="loginPage-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item id="loginPage-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" placeholder=""></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="loginPage-spacer2"></div>
+    <button id="loginPage-button2" ion-button color="stable" (click)="goToHome()">
+      Log in
+    </button>
+    <button id="loginPage-button3" ion-button clear color="positive" block on-click="goToSignup()">
+      Or create an account
+    </button>
+  </form>
+</ion-content>
