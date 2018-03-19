@@ -6,7 +6,7 @@ import { WelcomePagePage } from '../pages/welcome-page/welcome-page';
 import { LoginPagePage } from '../pages/login-page/login-page';
 import { SignupPage } from '../pages/signup/signup';
 import {PocketTrackerPage} from '../pages/pocket-tracker/pocket-tracker';
-
+import { CommonModule } from '@angular/common';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
