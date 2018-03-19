@@ -9,6 +9,10 @@ import {PocketTrackerPage} from '../pages/pocket-tracker/pocket-tracker';
 import { CommonModule } from '@angular/common';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HomePage } from '../pages/home/home';
+import { IncomesPage } from '../pages/incomes/incomes';
+import { ExpensesPage } from '../pages/expenses/expenses';
+import { SummaryPage } from '../pages/summary/summary';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePagePage,
     LoginPagePage,
     SignupPage,
-    PocketTrackerPage
+    PocketTrackerPage,
+    HomePage,
+    IncomesPage,
+    ExpensesPage,
+    SummaryPage
 
   ],
   imports: [
@@ -29,7 +37,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePagePage,
     LoginPagePage,
     SignupPage,
-    PocketTrackerPage
+    PocketTrackerPage,
+    HomePage,
+    IncomesPage,
+    ExpensesPage,
+    SummaryPage
   ],
   providers: [
     StatusBar,
