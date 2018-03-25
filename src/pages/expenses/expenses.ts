@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddExpensesPage } from '../add-expenses/add-expenses';
+import { GlobalVariablesProvider } from '../../providers/global-variables/global-variables';
 
 /**
  * Generated class for the ExpensesPage page.
@@ -14,12 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'expenses.html',
 })
 export class ExpensesPage {
+  transactions: Array<{value:Number, description:string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public globalVariables: GlobalVariablesProvider) {
+    this.transactions = this.globalVariables.expenseTransactions;
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExpensesPage');
   }
-
+  addTrans(){
+    this.navCtrl.push(AddExpensesPage);
+  }
 }

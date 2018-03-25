@@ -22,7 +22,16 @@
           RD$8,090.93
         </ion-card-content>
       </ion-card>
+
+      <ion-card *ngFor="let t of transactions ">
+        <ion-card-header style="text-align:center">
+          RD$ {{t.value}} 
+        </ion-card-header>
+        <ion-card-content>
+          {{t.description}}
+        </ion-card-content>
+      </ion-card>
   <ion-fab right bottom>
-    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)="addTrans()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>

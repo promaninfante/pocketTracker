@@ -1,0 +1,32 @@
+<!--
+  Generated template for the AddTransactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Transaction</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>RD$</ion-label>
+    <ion-input type="text"  [(ngModel)]="incomeValue"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Description: </ion-label>
+    <ion-input type="text"  [(ngModel)]="incomeDescription"></ion-input>
+  </ion-item>
+  <ion-buttons end>
+    <button ion-button icon-left (click)="setValues()">
+      <ion-icon name="ios-add"></ion-icon>
+      Add Transaction
+    </button>
+  </ion-buttons>
+</ion-content>

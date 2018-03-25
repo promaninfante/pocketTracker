@@ -1,41 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Signup
+      Sign Up
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding id="page4">
-  <form id="signup-form2">
-    <h5 id="signup-heading4" style="color:#000000;text-align:center;">
-      Sign up and enjoy the benefits of
-    </h5>
-    <h3 id="signup-heading5" style="color:#000000;text-align:center;">
+<ion-content padding id="page3">
+  <form id="loginPage-form1">
+    <h3 id="loginPage-heading3" style="color:#000000;text-align:center;">
       PocketTracker
     </h3>
-    <div class="spacer" style="width:300px;height:11px;" id="signup-spacer4"></div>
-    <ion-list id="signup-list2">
-      <ion-item id="signup-input3">
-        <ion-label>
-          Name
-        </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
-      </ion-item>
-      <ion-item id="signup-input4">
+    <div class="spacer" style="width:300px;height:17px;" id="loginPage-spacer3"></div>
+    <ion-list id="loginPage-list1">
+      <ion-item id="loginPage-input1">
         <ion-label>
           Email
         </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
+        <ion-input type="email"  [(ngModel)]="user.email" name = "email"></ion-input>
       </ion-item>
-      <ion-item id="signup-input5">
+      <ion-item id="loginPage-input2">
         <ion-label>
           Password
         </ion-label>
-        <ion-input type="text" placeholder=""></ion-input>
+        <ion-input type="password" [(ngModel)]="user.password" name = "password"></ion-input>
       </ion-item>
     </ion-list>
-    <button id="signup-button4" ion-button color="stable" block>
-      Sign up
+    <div class="spacer" style="height:40px;" id="loginPage-spacer2"></div>
+    <button id="loginPage-button3" ion-button clear color="positive" block (click)="register(user)">
+     Sign up now!
     </button>
   </form>
 </ion-content>

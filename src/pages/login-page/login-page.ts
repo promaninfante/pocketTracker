@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { SignupPage } from '../signup/signup';
 import { PocketTrackerPage } from '../pocket-tracker/pocket-tracker';
+import {User} from '../../models/user';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'page-login-page',
@@ -9,14 +11,22 @@ import { PocketTrackerPage } from '../pocket-tracker/pocket-tracker';
 })
 export class LoginPagePage {
 
-  constructor(public navCtrl: NavController) {
+  user = {} as User;
+  
+  constructor(private afAuth: AngularFireAuth,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
-  goToHome(params){
-    if(!params) params ={};
+
+  async login(user:User){
+    try{
+    const result = this.afAuth.auth.signInWithEmailAndPassword(user.email,user.password);
+    console.log(result);
     this.navCtrl.push(PocketTrackerPage);
-  }
-  goToSignup(params){
-    if (!params) params = {};
+  }catch(e){
+    console.log(e);
+  }}
+
+  register(){
     this.navCtrl.push(SignupPage);
   }
 }

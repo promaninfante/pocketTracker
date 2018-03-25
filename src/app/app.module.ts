@@ -13,6 +13,14 @@ import { HomePage } from '../pages/home/home';
 import { IncomesPage } from '../pages/incomes/incomes';
 import { ExpensesPage } from '../pages/expenses/expenses';
 import { SummaryPage } from '../pages/summary/summary';
+import { GlobalVariablesProvider } from '../providers/global-variables/global-variables';
+import { AddTransactionPage } from '../pages/add-transaction/add-transaction';
+import {AngularFireModule} from 'angularfire2';
+import { FIREBASE_CONFIG } from './app.firebase.config';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { FinancialTipsPage } from '../pages/financial-tips/financial-tips';
+
+
 
 @NgModule({
   declarations: [
@@ -24,12 +32,16 @@ import { SummaryPage } from '../pages/summary/summary';
     HomePage,
     IncomesPage,
     ExpensesPage,
-    SummaryPage
+    SummaryPage,
+    AddTransactionPage,
+    FinancialTipsPage
 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,12 +53,15 @@ import { SummaryPage } from '../pages/summary/summary';
     HomePage,
     IncomesPage,
     ExpensesPage,
-    SummaryPage
+    SummaryPage,
+    AddTransactionPage,
+    FinancialTipsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalVariablesProvider
   ]
 })
 export class AppModule {}
